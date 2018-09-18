@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="50dp">
+
+            <ImageView
+                android:id="@+id/login_picture"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/login_picture"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/login_username"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Username"
+                android:layout_gravity="center"
+                android:drawableLeft="@drawable/ico_person"/>
+
+            <EditText
+                android:id="@+id/login_password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Password"
+                android:layout_gravity="center"
+                android:drawableLeft="@drawable/ico_lock"
+                android:inputType="textPassword"/>
+
+            <Button
+                android:id="@+id/login_login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login"/>
+
+            <TextView
+                android:id="@+id/login_regis_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Register new account"
+                android:textColor="#329162"
+                android:layout_gravity="right"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
