@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="50dp"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/weight_form_back_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Back"/>
+
+            <EditText
+                android:id="@+id/weight_form_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Date"
+                android:drawableLeft="@drawable/ico_date"/>
+
+            <EditText
+                android:id="@+id/weight_form_weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="Weight"
+                android:drawableLeft="@drawable/ico_weight"/>
+
+            <Button
+                android:id="@+id/weight_form_add_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add"/>
+
+        </LinearLayout>
+    </ScrollView>
+    
+</LinearLayout>
