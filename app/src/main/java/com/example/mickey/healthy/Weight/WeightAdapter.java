@@ -18,10 +18,10 @@ public class WeightAdapter extends ArrayAdapter<Weight> {
     List<Weight> weights = new ArrayList<Weight>();
     Context context;
 
-    public WeightAdapter(Context context, int resource, List<Weight> object)
+    public WeightAdapter(Context context, int resource, List<Weight> objects)
     {
-        super(context, resource, object);
-        this.weights = object;
+        super(context, resource, objects);
+        this.weights = objects;
         this.context = context;
     }
 
@@ -36,7 +36,7 @@ public class WeightAdapter extends ArrayAdapter<Weight> {
 
         Weight row = weights.get(position);
         date.setText(row.getDate());
-        weight.setText(row.getWeight());
+        weight.setText(Integer.toString(row.getWeight()));
         status.setText(row.getStatus());
 
         return weightItem;

@@ -39,11 +39,11 @@ public class LoginFragment extends Fragment{
         fbAuth = FirebaseAuth.getInstance();
         if (fbAuth.getCurrentUser() != null)
         {
+            Log.d("login", "already logged in go to menu");
             getActivity().getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.main_view, new MenuFragment())
                     .commit();
-            Log.d("login", "already logged in go to menu");
         }
         if (getView() == null) return;
         Button loginButton = getView().findViewById(R.id.login_login_button);
@@ -68,7 +68,7 @@ public class LoginFragment extends Fragment{
                                 @Override
                                 public void onSuccess(AuthResult authResult)
                                 {
-                                    if (authResult.getUser().isEmailVerified())
+                                    if (fbAuth.getCurrentUser().isEmailVerified())
                                     {
                                         getActivity().getSupportFragmentManager()
                                                 .beginTransaction()
@@ -88,7 +88,7 @@ public class LoginFragment extends Fragment{
                         @Override
                         public void onFailure(@NonNull Exception e)
                         {
-                            Toast.makeText(getContext(), "Error = " + e.getMessage(), Toast.LENGTH_SHORT);
+                            Toast.makeText(getContext(), "Error : " + e.getMessage(), Toast.LENGTH_SHORT);
                             Log.d("login", "Error : " + e.getMessage());
                         }
                     });

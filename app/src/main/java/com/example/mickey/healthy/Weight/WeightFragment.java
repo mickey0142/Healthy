@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toolbar;
 
+import com.example.mickey.healthy.MenuFragment;
 import com.example.mickey.healthy.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.EventListener;
@@ -59,9 +60,9 @@ public class WeightFragment extends Fragment {
         fbStore.collection("myfitness").document(fbAuth.getUid()).collection("weight")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
-                    public void onEvent(@javax.annotation.Nullable QuerySnapshot DocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
+                    public void onEvent(@javax.annotation.Nullable QuerySnapshot documentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
                         weightAdapter.clear();
-                        for (QueryDocumentSnapshot doc: DocumentSnapshots)
+                        for (QueryDocumentSnapshot doc : documentSnapshots)
                         {
                             weights.add(doc.toObject(Weight.class));
                         }
@@ -80,5 +81,17 @@ public class WeightFragment extends Fragment {
                         weightAdapter.notifyDataSetChanged();
                     }
                 });
+        Button backButton = getView().findViewById(R.id.weight_back_button);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("weight", "back to menu");
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.main_view, new MenuFragment())
+                        .commit();
+            }
+        });
     }
 }
