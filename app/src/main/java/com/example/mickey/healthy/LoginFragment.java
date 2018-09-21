@@ -88,7 +88,7 @@ public class LoginFragment extends Fragment{
                         @Override
                         public void onFailure(@NonNull Exception e)
                         {
-                            Toast.makeText(getContext(), "Error : " + e.getMessage(), Toast.LENGTH_SHORT);
+                            Toast.makeText(getContext(), "login failed ", Toast.LENGTH_SHORT);
                             Log.d("login", "Error : " + e.getMessage());
                         }
                     });

@@ -74,6 +74,7 @@ public class RegisterFragment extends Fragment {
                                     .beginTransaction()
                                     .replace(R.id.main_view, new LoginFragment())
                                     .commit();
+                            fbAuth.signOut();
                             Log.d("register", "register success");
                         }
                     }).addOnFailureListener(new OnFailureListener() {
