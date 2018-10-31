@@ -20,6 +20,16 @@ import java.util.ArrayList;
 public class MenuFragment extends Fragment {
     ArrayList<String> menu = new ArrayList<>();
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        menu.add("BMI");
+        menu.add("Weight");
+        menu.add("Sleep");
+        menu.add("SignOut");
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -29,9 +39,6 @@ public class MenuFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        menu.add("BMI");
-        menu.add("Weight");
-        menu.add("SignOut");
 
         final ArrayAdapter<String> menuAdapter = new ArrayAdapter<String>(
                 getActivity(), android.R.layout.simple_list_item_1, menu
@@ -58,6 +65,14 @@ public class MenuFragment extends Fragment {
                             .commit();
                 }
                 else if (i == 2)
+                {
+                    getActivity().getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.main_view, new SleepFragment())
+                            .addToBackStack(null)
+                            .commit();
+                }
+                else if (i == 3)
                 {
                     FirebaseAuth.getInstance().signOut();
                     getActivity().getSupportFragmentManager()

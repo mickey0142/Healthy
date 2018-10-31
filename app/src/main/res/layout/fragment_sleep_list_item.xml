@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/sleep_list_item_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="19-01-1998"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/sleep_list_item_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00 - 20:00"
+        android:textSize="30dp"/>
+
+    <TextView
+        android:id="@+id/sleep_list_item_sleep_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="09:30"
+        android:textSize="35dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="-60dp"/>
+
+</LinearLayout>

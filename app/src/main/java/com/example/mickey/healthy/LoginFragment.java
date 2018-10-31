@@ -52,7 +52,7 @@ public class LoginFragment extends Fragment{
             public void onClick(View v) {
                 EditText username = getView().findViewById(R.id.login_username);
                 EditText password = getView().findViewById(R.id.login_password);
-                String usernameStr = username.getText().toString();
+                final String usernameStr = username.getText().toString();
                 String passwordStr = password.getText().toString();
                 if (usernameStr.isEmpty() || passwordStr.isEmpty())
                 {
@@ -89,7 +89,7 @@ public class LoginFragment extends Fragment{
                         public void onFailure(@NonNull Exception e)
                         {
                             Toast.makeText(getContext(), "login failed ", Toast.LENGTH_SHORT);
-                            Log.d("login", "Error : " + e.getMessage());
+                            Log.d("login", "Error + " + usernameStr + " : " + e.getMessage());
                         }
                     });
                 }
