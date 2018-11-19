@@ -27,6 +27,7 @@ public class MenuFragment extends Fragment {
         menu.add("BMI");
         menu.add("Weight");
         menu.add("Sleep");
+        menu.add("Post");
         menu.add("SignOut");
     }
 
@@ -73,6 +74,14 @@ public class MenuFragment extends Fragment {
                             .commit();
                 }
                 else if (i == 3)
+                {
+                    getActivity().getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.main_view, new PostFragment())
+                            .addToBackStack(null)
+                            .commit();
+                }
+                else if (i == 4)
                 {
                     FirebaseAuth.getInstance().signOut();
                     getActivity().getSupportFragmentManager()
